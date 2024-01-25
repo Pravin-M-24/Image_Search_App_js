@@ -59,14 +59,14 @@ h1{
 }
 
 .child_container img{
-    width: 320px;
-    height: 160px;
-    object-fit:fill;
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
     border-radius: 5px;
     overflow: hidden;
 }
 .child_container img:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
     transition: 0.5s ease-in-out;
 }
 .child_container:hover a{
@@ -81,8 +81,8 @@ h1{
 }
 .child_container{
     display: flex;
-    width: 320px;
-    height: 220px;
+    width: 350px;
+    height: 260px;
     flex-direction: column;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
