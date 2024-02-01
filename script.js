@@ -33,19 +33,21 @@ async function displayImage(){
     if(page > 1) showMore.style.display = "block";
 }
   
-// function imageLoader(func , delay){
+function imageLoader(func , delay){
         
-//          let countId ;
-//     return function(){
-//          const context = this,
-//          args = arguments;
-//          countId = setTimeout(function() {
-//                func(context, args);
-//          },delay);
-//     }
-// }
+         let countId ;
+    return function(){
+         const context = this,
+         args = arguments;
+         clearTimeout(countId);
+         countId = setTimeout(function() {
+               func(context, args);
+         },delay);
+    }
+}
 
-//  const displayImageDebounce = imageLoader(displayImage , 1500);
+ const displayImageDebounce = imageLoader(displayImage , 1500);
+
 search_btn.addEventListener('click' , (e)=>{
         page = 1;
         e.preventDefault();
@@ -55,4 +57,4 @@ showMore.addEventListener('click' , displayImage);
 
 // text.addEventListener('keyup' , displayImage);
 
-// text.addEventListener('keyup' , displayImageDebounce);
+text.addEventListener('keyup' , displayImageDebounce);
